@@ -42,6 +42,11 @@ const LESSONS = [
     id: "bai-7", href: "bai-7.html", no: "Bài 7", title: "Phân tích phương sai (ANOVA)",
     desc: "So sánh nhiều trung bình cùng lúc: chia độ biến thiên SS = SSB + SSW, phép kiểm F và bảng ANOVA; số liệu thô và số liệu tóm tắt, bài toán ngược, nối với phép kiểm T và Kruskal–Wallis, ANOVA hai yếu tố.",
     chips: ["SSB, SSW", "Phép kiểm F", "Bảng ANOVA", "Hai yếu tố"]
+  },
+  {
+    id: "bai-8", href: "bai-8.html", no: "Bài 8", title: "Hồi quy và tương quan",
+    desc: "Hai số đo trên cùng một người: đường hồi quy Y = a + bX bằng bình phương bé nhất, hệ số tương quan r, phương sai hồi quy, khoảng dự báo cho Y và μY, kiểm định ρ = 0 và ρ = ρ0 (Fisher), so sánh phương trình hồi quy, đổi biến, hồi quy X theo Y.",
+    chips: ["Y = a + bX", "Hệ số r", "Khoảng dự báo", "Kiểm định ρ"]
   }
 ];
 
@@ -52,9 +57,7 @@ const EXTRA_PAGES = [
 ];
 
 /* Các bài sắp học (hiện mờ trên trang chủ). Khi làm xong bài nào thì chuyển nó lên LESSONS. */
-const COMING = [
-  { no: "Bài 8", title: "Hồi quy và tương quan" }
-];
+const COMING = [];
 
 (function () {
   const root = document.documentElement;

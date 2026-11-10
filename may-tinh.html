@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="assets/css/style.css?v=4">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-  <script defer src="assets/js/site.js?v=9"></script>
+  <script defer src="assets/js/site.js?v=10"></script>
 </head>
 <body data-lesson="may-tinh">
 <header class="topbar">
@@ -87,7 +87,7 @@
 <div class="table-wrap"><table>
   <tr><th>Phím</th><th>Tên trên màn hình</th><th class="left">Dùng để</th><th class="left">Gặp ở</th></tr>
   <tr><td><span class="keys"><kbd class="fn">MENU</kbd><kbd>1</kbd></span></td><td><span class="lcd">Calculate</span></td><td class="left">tính thường: tổ hợp, Bernoulli, toàn phần, Bayes, tích phân $\int$</td><td class="left">mục 2, 6</td></tr>
-  <tr><td><span class="keys"><kbd class="fn">MENU</kbd><kbd>6</kbd></span></td><td><span class="lcd">Statistics</span></td><td class="left">kỳ vọng, phương sai của biến rời rạc; số liệu mẫu (Bài 3); sau này: hồi quy (Bài 8)</td><td class="left">mục 4</td></tr>
+  <tr><td><span class="keys"><kbd class="fn">MENU</kbd><kbd>6</kbd></span></td><td><span class="lcd">Statistics</span></td><td class="left">kỳ vọng, phương sai của biến rời rạc; số liệu mẫu (Bài 3); hồi quy – tương quan (Bài 8, <span class="nowrap">MENU 6 2</span>)</td><td class="left">mục 4</td></tr>
   <tr><td><span class="keys"><kbd class="fn">MENU</kbd><kbd>7</kbd></span></td><td><span class="lcd">Distribution</span></td><td class="left">xác suất nhị thức, phân phối chuẩn, phân vị</td><td class="left">mục 5</td></tr>
   <tr><td><span class="keys"><kbd class="fn">MENU</kbd><kbd>8</kbd></span></td><td><span class="lcd">Table</span></td><td class="left">lập bảng giá trị $f(x)$ khi $x$ chạy — xem cả phân phối một lúc</td><td class="left">mục 3</td></tr>
 </table></div>
@@ -285,6 +285,35 @@ max(x)= 5</div>
   <p class="small">Đề chỉ cho $n_i$, $\overline x_i$, $s_i$: bước 3 vẫn làm được (ra $\overline x$ và $SSB$); còn $SSW=\sum(n_i-1)s_i^2$ gõ thẳng trong MENU 1, ví dụ <span class="lcd">11×0.42²+9×0.38²+10×0.45²+10×0.4²</span> → <span class="lcd">6.865</span>. Giá trị tới hạn $F_{1-\alpha}(k-1;\ N-k)$ máy không có — tra <a href="phu-luc.html#pl-6a">Phụ lục 6</a>. <a href="bai-7.html#bam-may-anova">Bài 7, mục 4.2 →</a></p>
 </div>
 
+<h3 id="hoi-quy">4.5. Hồi quy tuyến tính (Bài 8): chế độ y=a+bx</h3>
+<p><b>Máy làm gì?</b> Ở <span class="keys"><kbd class="fn">MENU</kbd><kbd>6</kbd><kbd>2</kbd></span>, mỗi hàng của bảng là một cặp $(x;\ y)$ — một người. Máy tự cộng $\sum x$, $\sum y$, $\sum x^2$, $\sum y^2$, $\sum xy$ rồi giải hệ phương trình bình phương bé nhất, cho ngay $a$, $b$ của $y=a+bx$ và hệ số tương quan $r$. Đó đúng là các bước “lập bảng $X^2$, $XY$ → giải hệ (*)” của giáo trình, máy làm thay.</p>
+<div class="table-wrap"><table class="compact" style="min-width:560px">
+  <tr><th class="left">Màn hình</th><th class="left">Dòng trên máy</th><th class="left">Ký hiệu giáo trình</th></tr>
+  <tr><td class="left" rowspan="4"><span class="keys"><kbd class="fn">OPTN</kbd><kbd>3</kbd></span> 2-Variable Calc</td><td class="left"><span class="lcd">x̄</span>, <span class="lcd">ȳ</span></td><td class="left">$\overline X$, $\overline Y$</td></tr>
+  <tr><td class="left"><span class="lcd">sx</span>, <span class="lcd">sy</span> (chia $n-1$)</td><td class="left">$S_X$, $S_Y$ — <b>dùng dòng này</b></td></tr>
+  <tr><td class="left"><span class="lcd">σx</span>, <span class="lcd">σy</span> (chia $n$)</td><td class="left">không dùng trong Bài 8</td></tr>
+  <tr><td class="left"><span class="lcd">Σx</span>, <span class="lcd">Σx²</span>, <span class="lcd">Σy</span>, <span class="lcd">Σy²</span>, <span class="lcd">Σxy</span>, <span class="lcd">n</span></td><td class="left">các tổng của bảng tính tay</td></tr>
+  <tr><td class="left"><span class="keys"><kbd class="fn">OPTN</kbd><kbd>4</kbd></span> Regression Calc</td><td class="left"><span class="lcd">a</span>, <span class="lcd">b</span>, <span class="lcd">r</span></td><td class="left">$Y=a+bX$ ($a$ tung độ gốc, $b$ hệ số góc) và $r$</td></tr>
+  <tr><td class="left">Lệnh $\hat y$ (trong <span class="keys"><kbd class="fn">OPTN</kbd><kbd>▼</kbd></span>, nhóm Regression)</td><td class="left">gõ $x_0$ rồi $\hat y$</td><td class="left">dự báo $Y_0=a+bX_0$</td></tr>
+  <tr><td class="left">Lệnh $\hat x$</td><td class="left">gõ $y$ rồi $\hat x$</td><td class="left">giải ngược $\frac{y-a}{b}$ — <b>không phải</b> hồi quy $X$ theo $Y$</td></tr>
+</table></div>
+<p class="small muted center">Trên điện thoại, vuốt ngang bảng để xem hết.</p>
+<div class="box calc">
+  <div class="box-title"><span class="tag">Bấm máy</span><span>Bài 8, ví dụ chính — số năm hút thuốc và mất bám dính</span></div>
+  <ol class="keyseq">
+    <li><span class="keys"><kbd class="fn">MENU</kbd><kbd>6</kbd><kbd>2</kbd><span class="lcd">y=a+bx</span></span> <span class="why">bảng có cột x, y (bật Freq thì có thêm cột Freq — để 1).</span></li>
+    <li><span class="why">Cột x: 3 = 6 = 7 = 10 = 12 = 16 =. Sang cột y (<kbd class="key">▶</kbd>, <kbd class="key">▲</kbd> về hàng 1): 3.1 = 3.4 = 4.1 = 4.7 = 4.9 = 5.6 =. Mỗi hàng là một bệnh nhân.</span></li>
+    <li><span class="keys"><kbd>AC</kbd><kbd class="fn">OPTN</kbd><kbd>4</kbd></span> <span class="why"><span class="lcd">a = 2.5</span>, <span class="lcd">b = 0.2</span>, <span class="lcd">r = 0.9797958971</span> ⇒ $Y=2{,}5+0{,}2X$.</span></li>
+    <li><span class="keys"><kbd class="fn">OPTN</kbd><kbd>3</kbd></span> <span class="why"><span class="lcd">x̄ = 9</span>, <span class="lcd">sx = 4.647580015</span>, <span class="lcd">ȳ = 4.3</span>, <span class="lcd">sy = 0.9486832981</span>, <span class="lcd">Σxy = 253.8</span>.</span></li>
+    <li><span class="why">Phần còn lại gõ trong <span class="keys"><kbd class="fn">MENU</kbd><kbd>1</kbd></span>: phương sai hồi quy $\frac{n-1}{n-2}(1-r^2)S_Y^2$ → <span class="lcd">5÷4×(1−0.9797958971²)×0.9486832981²</span> = <span class="lcd">0.045</span>; bán kính khoảng dự báo dùng CALC (<a href="bai-8.html#vi-du-du-bao">Bài 8, mục 5.3</a>); $Z_r=\frac12\ln\frac{1+r}{1-r}$ dùng phím <kbd class="key">ln</kbd>.</span></li>
+  </ol>
+  <p class="small">Các phím của chế độ y=a+bx (Regression Calc, 2-Variable Calc, $\hat y$, $\hat x$) viết theo sách hướng dẫn fx-580VN X, <b>chưa thử trên Vinacal 680EX Plus thật</b> — thấy khác thì sửa lại theo máy. Bảng Student, bảng $z$ máy không có: tra <a href="phu-luc.html#pl-5">Phụ lục 5</a>, <a href="phu-luc.html#pl-3">Phụ lục 3</a>. <a href="bai-8.html#bam-may-hoi-quy">Bài 8, mục 2.6 →</a></p>
+</div>
+<div class="box trap">
+  <div class="box-title"><span class="tag">Bẫy</span><span>Hồi quy $X$ theo $Y$ trên máy</span></div>
+  <p>Muốn “biết $Y$, dự báo $X$” (ước tính tuổi từ độ mòn răng, chiều cao từ cân nặng…) thì <b>nhập lại</b> số liệu với cột x là $Y$, cột y là $X$, rồi đọc $a$, $b$ mới. Dùng $\hat x$ trên số liệu cũ là giải ngược đường $Y$ theo $X$ — ra đáp số khác (<a href="bai-8.html#x-theo-y">Bài 8, mục 8.3</a>).</p>
+</div>
+
 <!-- =============================================================== -->
 <h2 id="distribution" data-toc="5. Phân phối (MENU 7)"><span class="num">5</span>Phân phối — <span class="nowrap">MENU 7</span> Distribution</h2>
 <h3 id="dist-menu">5.1. Menu phân phối</h3>
@@ -470,6 +499,9 @@ max(x)= 5</div>
   <tr><td class="left">Kruskal–Wallis $W$ (Bài 6)</td><td class="left"><span class="keys"><kbd class="fn">MENU</kbd><kbd>1</kbd></span> gõ $\frac{12}{n(n+1)}\sum\frac{T_i^2}{n_i}-3(n+1)$</td><td class="left"><a href="#chi2-bang">5.8</a></td></tr>
   <tr><td class="left">ANOVA: $SS$, $SSB$, trung bình chung (Bài 7)</td><td class="left"><span class="keys"><kbd class="fn">MENU</kbd><kbd>6</kbd><kbd>1</kbd></span> nhập cả số liệu (→ $SS$) hoặc $\overline x_i$ với Freq $=n_i$ (→ $SSB$); lấy $n\times\sigma^2_x$</td><td class="left"><a href="#anova">4.4</a></td></tr>
   <tr><td class="left">ANOVA: $SSW$ từ $n_i$, $s_i$ (Bài 7)</td><td class="left"><span class="keys"><kbd class="fn">MENU</kbd><kbd>1</kbd></span> gõ $\sum(n_i-1)s_i^2$</td><td class="left"><a href="#anova">4.4</a></td></tr>
+  <tr><td class="left">Hồi quy: $a$, $b$, hệ số tương quan $r$ (Bài 8)</td><td class="left"><span class="keys"><kbd class="fn">MENU</kbd><kbd>6</kbd><kbd>2</kbd></span> nhập cột x, y → <span class="keys"><kbd class="fn">OPTN</kbd><kbd>4</kbd></span> Regression Calc</td><td class="left"><a href="#hoi-quy">4.5</a></td></tr>
+  <tr><td class="left">$\overline X$, $S_X$, $\overline Y$, $S_Y$, $\sum XY$ (Bài 8)</td><td class="left">cùng chế độ → <span class="keys"><kbd class="fn">OPTN</kbd><kbd>3</kbd></span> 2-Variable Calc; đọc <b>sx, sy</b></td><td class="left"><a href="#hoi-quy">4.5</a></td></tr>
+  <tr><td class="left">Phương sai hồi quy, khoảng dự báo, $T$ của $r$, $Z_r$ (Bài 8)</td><td class="left"><span class="keys"><kbd class="fn">MENU</kbd><kbd>1</kbd></span> gõ công thức (CALC khi đổi $X_0$; phím ln cho $Z_r$)</td><td class="left"><a href="#hoi-quy">4.5</a></td></tr>
   <tr><td class="left">χ², Student, Fisher</td><td class="left">máy không có — tra bảng</td><td class="left"><a href="phu-luc.html">Phụ lục</a></td></tr>
 </table></div>
 
@@ -488,6 +520,7 @@ max(x)= 5</div>
     <li><b>Thiếu ngoặc:</b> $(1-A)(1-C)$, số mũ $6-x$ phải nằm trọn trong ô số mũ.</li>
     <li><b>Làm tròn giữa chừng</b> rồi dùng tiếp — hãy để số trong <span class="keys"><kbd>Ans</kbd></span> hoặc cất vào biến.</li>
     <li><b>Dùng Bernoulli/Binomial khi $p$ thay đổi</b> giữa các lần thử — máy vẫn ra số, nhưng là số sai.</li>
+    <li><b>Hồi quy (Bài 8): lệch hàng</b> giữa cột x và cột y (mỗi hàng phải là một người); dùng $\hat x$ cho bài “biết $Y$, dự báo $X$”; làm tròn $r$ trước khi tính $1-r^2$.</li>
   </ul>
 </div>
 <div class="box extra">

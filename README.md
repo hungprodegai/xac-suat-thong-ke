@@ -10,8 +10,9 @@ Trang web tự học theo giáo trình *Xác suất – Thống kê Y học*: m�
 - `bai-5.html` — Bài 5. Kiểm định giả thuyết thống kê (logic, hai loại sai lầm, miền bác bỏ, p-value; trung bình, tỉ lệ, phương sai một mẫu; hai phương sai, hai trung bình độc lập và ghép cặp, hai tỉ lệ; bài toán ngược).
 - `bai-6.html` — Bài 6. Phép kiểm phi tham số (χ² tính độc lập, so sánh nhiều tỉ lệ, sự phù hợp; xếp hạng; Wilcoxon dấu và hạng một mẫu và ghép cặp, tổng hạng hai mẫu; Kruskal–Wallis).
 - `bai-7.html` — Bài 7. Phân tích phương sai (ANOVA một yếu tố: lạm phát sai lầm loại 1, ba điều kiện, SS = SSB + SSW, phép kiểm F, bảng ANOVA, số liệu thô và tóm tắt, bài toán ngược; nối với phép kiểm T và Kruskal–Wallis; ANOVA hai yếu tố).
+- `bai-8.html` — Bài 8. Hồi quy và tương quan (đám mây điểm, bình phương bé nhất, phương trình Y = a + bX, hệ số tương quan r, SST = SSR + SSE, phương sai hồi quy, khoảng dự báo cho Y và μY, kiểm định ρ = 0 và ρ = ρ0, so sánh phương trình hồi quy, đổi biến, hồi quy X theo Y).
 - `phu-luc.html` — Bảng phụ lục 1 – 8 (thêm hai bảng Wilcoxon): mỗi bảng có bản chép đúng như giáo trình (ô in sai tô đỏ) và bản đã sửa kèm ghi chú.
-- `may-tinh.html` — Bấm máy Vinacal 680EX Plus (menu kiểu Casio fx-580VN X): tổ hợp, biến nhớ, CALC, Table, Statistics, Distribution, tích phân. Trong các bài, khung `<div class="box calc">` (“Bấm máy”) đặt ngay chỗ cần dùng máy và dẫn link về trang này; phím ghi bằng `<span class="keys"><kbd>…</kbd></span>` (phím chức năng thêm `class="fn"`), chữ trên màn hình máy ghi bằng `<span class="lcd">…</span>`.
+- `may-tinh.html` — Bấm máy Vinacal 680EX Plus (menu kiểu Casio fx-580VN X): tổ hợp, biến nhớ, CALC, Table, Statistics (cả hồi quy y=a+bx), Distribution, tích phân. Trong các bài, khung `<div class="box calc">` (“Bấm máy”) đặt ngay chỗ cần dùng máy và dẫn link về trang này; phím ghi bằng `<span class="keys"><kbd>…</kbd></span>` (phím chức năng thêm `class="fn"`), chữ trên màn hình máy ghi bằng `<span class="lcd">…</span>`.
 
 ## Xem trên máy
 
@@ -38,7 +39,7 @@ assets/js/site.js      danh sách bài, mục lục tự động, KaTeX, đổi 
 assets/js/plot.js      hàm toán (chuẩn, nhị thức, χ², Student, Fisher) + vẽ biểu đồ SVG, cây xác suất, sơ đồ tư duy
 assets/js/bai1.js      phần tương tác của Bài 1
 assets/js/bai2.js      phần tương tác của Bài 2
-assets/js/bai3.js … bai7.js  phần tương tác của Bài 3 – 7
+assets/js/bai3.js … bai8.js  phần tương tác của Bài 3 – 8
 assets/js/phuluc-data.js  các bảng phụ lục chép nguyên văn + danh sách ô in sai và giá trị đúng
 assets/js/phuluc.js    dựng hai bản (theo giáo trình / đã sửa) cho mỗi bảng ở phu-luc.html
 ```
