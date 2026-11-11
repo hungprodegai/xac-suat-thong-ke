@@ -1,5 +1,7 @@
 # Xác suất – Thống kê Y học · tài liệu tự học
 
+🌐 **Trang web để học:** https://hungprodegai.github.io/ss1s/
+
 Trang web tự học theo giáo trình *Xác suất – Thống kê Y học*: mỗi bài được giảng lại từ đầu, có hình vẽ tương tác, ví dụ mới giải từng bước và bài tập chia 3 mức (thông hiểu → vận dụng → vận dụng cao).
 
 - `index.html` — trang chủ, liệt kê các bài.
